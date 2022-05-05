@@ -5,7 +5,7 @@ import { NavItem, NavLink } from "shards-react";
 
 const SidebarNavItem = ({ item }) => (
   <NavItem>
-    <NavLink tag={RouteNavLink} to={item.to}>
+    <NavLink tag={(props) => <RouteNavLink {...props} />} to={item.to}>
       {item.htmlBefore && (
         <div
           className="d-inline-block item-icon-wrapper"
@@ -27,7 +27,7 @@ SidebarNavItem.propTypes = {
   /**
    * The item object.
    */
-  item: PropTypes.object
+  item: PropTypes.object,
 };
 
 export default SidebarNavItem;

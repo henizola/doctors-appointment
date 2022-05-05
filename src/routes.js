@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 // Layout Types
 import { DefaultLayout } from "./layouts";
 import ComponentsOverview from "./views/ComponentsOverview";
@@ -9,49 +9,56 @@ import DocOverview from "./views/DocOverview";
 import DoctorSchedule from "./views/DoctorSchedule";
 import Errors from "./views/Errors";
 import Tables from "./views/Tables";
-import UserProfileLite from "./views/UserProfileLite";
+import DocProfile from "./views/DocProfile";
+
+import DoctorAvailablity from "./views/DoctorAvailablity";
 
 const routes = [
   {
     path: "/",
     exact: true,
     layout: DefaultLayout,
-    component: () => <Redirect to="/doc-overview" />
+    component: () => <Navigate replace to="/doc/overview" />,
   },
   {
-    path: "/doc-overview",
+    path: "/doc/overview",
     layout: DefaultLayout,
-    component: DocOverview
+    component: DocOverview,
   },
   {
-    path: "/user-profile-lite",
+    path: "/doc/profile",
     layout: DefaultLayout,
-    component: UserProfileLite
+    component: DocProfile,
   },
   {
     path: "/doc/schedules",
     layout: DefaultLayout,
-    component: DoctorSchedule
+    component: DoctorSchedule,
   },
   {
     path: "/errors",
     layout: DefaultLayout,
-    component: Errors
+    component: Errors,
   },
   {
     path: "/components-overview",
     layout: DefaultLayout,
-    component: ComponentsOverview
+    component: ComponentsOverview,
   },
   {
     path: "/tables",
     layout: DefaultLayout,
-    component: Tables
+    component: Tables,
   },
   {
     path: "/doc/appointments",
     layout: DefaultLayout,
-    component: DocAppointments
-  }
+    component: DocAppointments,
+  },
+  {
+    path: "/doc/availablity",
+    layout: DefaultLayout,
+    component: DoctorAvailablity,
+  },
 ];
 export default routes;

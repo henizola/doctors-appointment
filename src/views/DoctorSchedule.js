@@ -37,7 +37,7 @@ const DoctorSchedule = () => {
                   </Col>
                   <Col md="3" className="form-group">
                     <FormSelect id="feInputState">
-                      <option>20 Min</option>
+                      <option>23 Min</option>
                       <option>10 Min</option>
                       <option>30 Min</option>
                       <option>40 Min</option>
@@ -50,7 +50,7 @@ const DoctorSchedule = () => {
                   style={{
                     padding: "30px 50px",
                     display: "grid",
-                    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr",
+                    gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr 1fr 1fr",
                     gridGap: "20px",
                     height: "85px",
                     paddingBottom: "0",
@@ -91,6 +91,14 @@ const DoctorSchedule = () => {
                   <Button
                     theme="primary"
                     className="mb-2 mr-1"
+                    outline={filter === "Friday"}
+                    onClick={() => setFilter("Friday")}
+                  >
+                    Friday
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
                     outline={filter === "  Sararday"}
                     onClick={() => setFilter("  Sararday")}
                   >
@@ -114,11 +122,73 @@ const DoctorSchedule = () => {
                   <Col>
                     <h4>Time Slots</h4>
                   </Col>
-                  <Col align="right">
-                    <Button theme="warning" outline>
-                      <i class="material-icons credit_card">&#xe870;</i> Edit
-                    </Button>
-                  </Col>
+                </Row>
+                <Row
+                  style={{
+                    padding: "30px 50px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    height: "fit-content",
+                    paddingBottom: "30px",
+                    width: "100%",
+                  }}
+                >
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    8:00 - 10:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    11:00 - 12:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    2:00 - 4:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    5:00 - 6:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    8:00 - 10:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    11:00 - 12:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    2:00 - 4:30
+                  </Button>
+                  <Button
+                    theme="primary"
+                    className="mb-2 mr-1"
+                    style={{ width: "23%", height: "50px", marginTop: "15px" }}
+                  >
+                    5:00 - 6:30
+                  </Button>
                 </Row>
               </Card>
             </CardBody>

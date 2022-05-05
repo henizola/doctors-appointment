@@ -7,7 +7,7 @@ import {
   DropdownItem,
   Collapse,
   NavItem,
-  NavLink
+  NavLink,
 } from "shards-react";
 
 export default class UserActions extends React.Component {
@@ -15,7 +15,7 @@ export default class UserActions extends React.Component {
     super(props);
 
     this.state = {
-      visible: false
+      visible: false,
     };
 
     this.toggleUserActions = this.toggleUserActions.bind(this);
@@ -23,7 +23,7 @@ export default class UserActions extends React.Component {
 
   toggleUserActions() {
     this.setState({
-      visible: !this.state.visible
+      visible: !this.state.visible,
     });
   }
 
@@ -39,18 +39,10 @@ export default class UserActions extends React.Component {
           <span className="d-none d-md-inline-block">Dr. Jone Doe</span>
         </DropdownToggle>
         <Collapse tag={DropdownMenu} right small open={this.state.visible}>
-          <DropdownItem tag={Link} to="user-profile">
-            <i className="material-icons">&#xE7FD;</i> Profile
-          </DropdownItem>
-          <DropdownItem tag={Link} to="edit-user-profile">
+          <DropdownItem tag={Link} to="profile">
             <i className="material-icons">&#xE8B8;</i> Edit Profile
           </DropdownItem>
-          <DropdownItem tag={Link} to="file-manager-list">
-            <i className="material-icons">&#xE2C7;</i> Files
-          </DropdownItem>
-          <DropdownItem tag={Link} to="transaction-history">
-            <i className="material-icons">&#xE896;</i> Transactions
-          </DropdownItem>
+
           <DropdownItem divider />
           <DropdownItem tag={Link} to="/" className="text-danger">
             <i className="material-icons text-danger">&#xE879;</i> Logout

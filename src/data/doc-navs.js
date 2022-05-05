@@ -2,7 +2,7 @@ const func = () => {
   return [
     {
       title: "Dashboard",
-      to: "/doc-overview",
+      to: "/doc/overview",
       htmlBefore: '<i class="material-icons">edit</i>',
       htmlAfter: ""
     },
@@ -19,23 +19,8 @@ const func = () => {
     {
       title: "My Availability",
       htmlBefore: '<i class="material-icons">view_module</i>',
-      to: "/components-overview"
+      to: "/doc/availablity"
     },
-    {
-      title: "Tables",
-      htmlBefore: '<i class="material-icons">table_chart</i>',
-      to: "/tables"
-    },
-    {
-      title: "User Profile",
-      htmlBefore: '<i class="material-icons">person</i>',
-      to: "/user-profile-lite"
-    },
-    {
-      title: "Errors",
-      htmlBefore: '<i class="material-icons">error</i>',
-      to: "/errors"
-    }
   ];
 };
 export default func;

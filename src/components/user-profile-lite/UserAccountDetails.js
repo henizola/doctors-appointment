@@ -32,7 +32,7 @@ const UserAccountDetails = ({ title }) => (
                   <FormInput
                     id="feFirstName"
                     placeholder="First Name"
-                    value="Sierra"
+                    value="Jone "
                     onChange={() => {}}
                   />
                 </Col>
@@ -42,7 +42,7 @@ const UserAccountDetails = ({ title }) => (
                   <FormInput
                     id="feLastName"
                     placeholder="Last Name"
-                    value="Brooks"
+                    value="Doe"
                     onChange={() => {}}
                   />
                 </Col>
@@ -55,10 +55,17 @@ const UserAccountDetails = ({ title }) => (
                     type="email"
                     id="feEmail"
                     placeholder="Email Address"
-                    value="sierra@example.com"
+                    value="jone@example.com"
                     onChange={() => {}}
                     autoComplete="email"
                   />
+                </Col>
+                <Col md="6" className="form-group">
+                  <label htmlFor="fePassword">Department</label>
+                  <FormSelect id="feInputState">
+                    <option>Cardiology</option>
+                    <option>Dentist</option>
+                  </FormSelect>
                 </Col>
                 {/* Password */}
                 <Col md="6" className="form-group">
@@ -72,49 +79,66 @@ const UserAccountDetails = ({ title }) => (
                     autoComplete="current-password"
                   />
                 </Col>
+                <Col md="6" className="form-group">
+                  <label htmlFor="fePassword">Confirm Password</label>
+                  <FormInput
+                    type="password"
+                    id="fePassword"
+                    placeholder="Password"
+                    value="EX@MPL#P@$$w0RD"
+                    onChange={() => {}}
+                    autoComplete="current-password"
+                  />
+                </Col>
               </Row>
-              <FormGroup>
-                <label htmlFor="feAddress">Address</label>
-                <FormInput
-                  id="feAddress"
-                  placeholder="Address"
-                  value="1234 Main St."
-                  onChange={() => {}}
-                />
-              </FormGroup>
+              <Row form>
+                {/* First Name */}
+                <Col md="6" className="form-group">
+                  <label htmlFor="feFirstName">Employmant Type</label>
+                  <FormInput
+                    id="feFirstName"
+                    placeholder="First Name"
+                    value="Part Time"
+                    onChange={() => {}}
+                  />
+                </Col>
+                {/* Last Name */}
+                <Col md="6" className="form-group">
+                  <label htmlFor="feLastName">Phone Number</label>
+                  <FormInput
+                    id="feLastName"
+                    placeholder="Last Name"
+                    value="+251 9161 54635"
+                    onChange={() => {}}
+                  />
+                </Col>
+              </Row>
               <Row form>
                 {/* City */}
                 <Col md="6" className="form-group">
-                  <label htmlFor="feCity">City</label>
+                  <label htmlFor="feCity">Age</label>
                   <FormInput
                     id="feCity"
-                    placeholder="City"
+                    placeholder="30"
                     onChange={() => {}}
                   />
                 </Col>
                 {/* State */}
-                <Col md="4" className="form-group">
-                  <label htmlFor="feInputState">State</label>
+                <Col md="6" className="form-group">
+                  <label htmlFor="feInputState">Gener</label>
                   <FormSelect id="feInputState">
-                    <option>Choose...</option>
-                    <option>...</option>
+                    <option>Male</option>
+                    <option>Female</option>
                   </FormSelect>
                 </Col>
                 {/* Zip Code */}
-                <Col md="2" className="form-group">
-                  <label htmlFor="feZipCode">Zip</label>
-                  <FormInput
-                    id="feZipCode"
-                    placeholder="Zip"
-                    onChange={() => {}}
-                  />
-                </Col>
+                
               </Row>
               <Row form>
                 {/* Description */}
                 <Col md="12" className="form-group">
                   <label htmlFor="feDescription">Description</label>
-                  <FormTextarea id="feDescription" rows="5" />
+                  <FormTextarea id="feDescription" rows="5" value='Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?' />
                 </Col>
               </Row>
               <Button theme="accent">Update Account</Button>
