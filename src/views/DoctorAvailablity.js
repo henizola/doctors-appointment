@@ -1,25 +1,21 @@
 import React, { useState } from "react";
 import {
+  Button,
   Card,
   CardBody,
+  CardHeader,
   Col,
   Container,
+  DatePicker,
   Row,
-  FormSelect,
-  CardHeader,
-  Button,
-  DatePicker
 } from "shards-react";
 import PageTitle from "../components/common/PageTitle";
 
 const DoctorAvailablity = () => {
-  const [filter, setFilter] = useState("Monday");
-  const [date,setDate]=useState(new Date())
-  const handleStartDateChange=(value) =>{
- setDate(
-     new Date(value) 
-    );
-  }
+  const [date, setDate] = useState(new Date());
+  const handleStartDateChange = (value) => {
+    setDate(new Date(value));
+  };
   return (
     <Container fluid className="main-content-container px-4 pb-4">
       {/* Page Header */}
@@ -35,117 +31,92 @@ const DoctorAvailablity = () => {
       <Row>
         {/* Editor */}
         <Col lg="12" md="12">
-          <Card small className="mb-3 " p={30}>
-            <CardBody>
-              <CardHeader className="border-bottom">
-                <Row lg="12 " className='ml-5' >
-                  <Col md='1.5'><h3>Date</h3></Col>
-                  <Col md="3" className="form-group">
+          <Card small className="mb-3 mt-4 ">
+            <Row className="card-titles">
+              <Row lg="12 " className="ml-5">
+                <Col md="1.5" className="ml-3">
+                  <h3 style={{ paddingTop: "7px" }}>Date</h3>
+                </Col>
+                <Col md="6" className="form-group">
                   <DatePicker
-          size="lg"
-          selected={date}
-          onChange={handleStartDateChange}
-          placeholderText=" Date"
-          dropdownMode="select"
-          className="text-center"
-          minDate={new Date()}
-        />
-                  </Col>
-                </Row>
-              </CardHeader>
-              <Card small className="mb-3 mt-4 ">
-           
-              
-                <Row
-                  style={{
-                    padding: "20px 30px",
-                    paddingBottom:'0px'
-                  }}
+                    size="lg"
+                    selected={date}
+                    onChange={handleStartDateChange}
+                    placeholderText=" Date"
+                    dropdownMode="select"
+                    className="text-center"
+                    minDate={new Date()}
+                  />
+                </Col>
+              </Row>
+            </Row>
+            <hr />
+            <Row className="time-slot-container">
+              <Button
+                theme="primary"
+                outline
+                className="time-slots time-slots mt-3"
+              >
+                8:00 - 10:30
+              </Button>
+              <Button theme="primary" className="time-slots time-slots mt-3">
+                11:00 - 12:30{" "}
+                <i
+                  class="material-icons check_circle_outline"
+                  style={{ fontSize: "15px", marginLeft: "10px" }}
                 >
-                  <Col align="right">
-                    <h5>Starting Time : 8:00</h5>
-                  </Col>
-                </Row>
-                <hr />
-                <Row
-                  style={{
-                    padding: "30px 50px",
-                  display:'flex',
-                  justifyContent:'space-between',
-                    height: "fit-content",
-                    paddingBottom: "30px",
-                    width:'100%',
-                  }}
+                  &#xe92d;
+                </i>
+              </Button>
+              <Button theme="primary" className="time-slots time-slots mt-3">
+                2:00 - 4:30{" "}
+                <i
+                  class="material-icons check_circle_outline"
+                  style={{ fontSize: "15px", marginLeft: "10px" }}
                 >
-                   <Button
-                    theme="primary"
-                    outline
-                    className="mb-2 mr-1"
-                   style={{width:'23%',height:'50px', marginTop:'15px'}}
-                  >
-                   8:00 - 10:30
-                  </Button>
-                  <Button
-                    theme="primary"
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-                   
-                  >
-                   11:00 - 12:30  <i class="material-icons check_circle_outline" style={{fontSize:'15px',marginLeft:'10px'}}>&#xe92d;</i>
-                  </Button>
-                  <Button
-                    theme="primary"
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-                   
-                  >
-                   2:00 - 4:30  <i class="material-icons check_circle_outline" style={{fontSize:'15px',marginLeft:'10px'}}>&#xe92d;</i>
-                  </Button>
-                  <Button
-                    theme="primary"
-                    outline
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-
-                  >
-                   
-                    5:00 - 6:30
-                  </Button>
-                  <Button
-                    theme="primary"
-                    className="mb-2 mr-1"
-                   style={{width:'23%',height:'50px', marginTop:'15px'}}
-                  >
-                   8:00 - 10:30  <i class="material-icons check_circle_outline" style={{fontSize:'15px',marginLeft:'10px'}}>&#xe92d;</i>
-                  </Button>
-                  <Button
-                    theme="primary"
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-                    outline
-                  >
-                   11:00 - 12:30
-                  </Button>
-                  <Button
-                  outline
-                    theme="primary"
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-                   
-                  >
-                   2:00 - 4:30 </Button>
-                  <Button
-                    theme="primary"
-                    className="mb-2 mr-1"
-                    style={{width:'23%',height:'50px', marginTop:'15px'}}
-
-                  >
-                    5:00 - 6:30 <i class="material-icons check_circle_outline" style={{fontSize:'15px',marginLeft:'10px'}}>&#xe92d;</i>
-                  </Button>
-                </Row>
-              
-              </Card>
-            </CardBody>
+                  &#xe92d;
+                </i>
+              </Button>
+              <Button
+                theme="primary"
+                outline
+                className="time-slots time-slots mt-3"
+              >
+                5:00 - 6:30
+              </Button>
+              <Button theme="primary" className="time-slots time-slots mt-3">
+                8:00 - 10:30{" "}
+                <i
+                  class="material-icons check_circle_outline"
+                  style={{ fontSize: "15px", marginLeft: "10px" }}
+                >
+                  &#xe92d;
+                </i>
+              </Button>
+              <Button
+                theme="primary"
+                className="time-slots time-slots mt-3"
+                outline
+              >
+                11:00 - 12:30
+              </Button>
+              <Button
+                outline
+                theme="primary"
+                className="time-slots time-slots mt-3"
+              >
+                2:00 - 4:30{" "}
+              </Button>
+              <Button theme="primary" className="time-slots time-slots mt-3">
+                5:00 - 6:30{" "}
+                <i
+                  class="material-icons check_circle_outline"
+                  style={{ fontSize: "15px", marginLeft: "10px" }}
+                >
+                  &#xe92d;
+                </i>
+              </Button>
+            </Row>
           </Card>
         </Col>
 

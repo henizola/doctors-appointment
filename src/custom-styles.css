@@ -29,6 +29,7 @@ padding: 10px 50px;
     height: fit-content;
     margin-top:50%;
     transform: translateY(-50%);
+
 }
 
 .form-card{
@@ -51,4 +52,79 @@ font-weight: bold;
 .height-50{
     height:50px;
     font-size:23px!important;;
+}
+
+.time-slots{
+    width: 23%; height: 50px; margin-top: 15px;
+}
+.time-slot-container{
+
+        padding: 0px 50px;
+        display: flex;
+        justify-content: space-between;
+        height: fit-content;
+        padding-bottom: 30px;
+        width: 100%;
+
+}
+
+pt-13{
+  padding-top: 7px 
+}
+.card-titles{
+    
+        padding: 20px 0px;
+        margin-right: 50px;
+        padding-bottom:0;
+       
+
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width:600px){
+    .form{
+        max-width:90vw;
+        margin-left:0!important;
+    }
+    .login-vector{
+        display: none;
+    }
+    .two-by-two{
+        grid-template-columns: 1fr;
+        max-width:90vw;
+        overflow-x:hidden ;
+        padding:100px 0;
+       margin-left:50%;
+       transform: translateX(-50%);
+    }
+    .login-button
+{
+max-width:90%;
+transform: translateX(-14px);
+}
+    .desktop{
+        display:none!important;
+    }
+    .mobile{
+        display: inline;
+    }
+    .time-slots{
+        width: 100%;
+        margin-top:0; 
+    }
+    .time-slot-container{
+        padding:0 30px;
+        padding-left:50px;
+        padding-bottom:30px;
+    }
+    .card-titles{
+        text-align:-webkit-left;
+        margin-right:0;
+    }
+    h3{
+        font-size :20px;
+        text-align: left!important;
+      
+    }
 }

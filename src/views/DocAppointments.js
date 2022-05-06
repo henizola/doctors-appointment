@@ -8,7 +8,7 @@ import {
   Card,
   CardHeader,
   CardBody,
-  Button
+  Button,
 } from "shards-react";
 import PageTitle from "../components/common/PageTitle";
 
@@ -56,54 +56,45 @@ const DocAppointments = () => {
                       #
                     </th>
                     <th scope="col" className="border-0">
-                      First Name
+                      Name
                     </th>
-                    <th scope="col" className="border-0">
-                      Last Name
-                    </th>
+
                     <th scope="col" className="border-0">
                       Gender
                     </th>
                     <th scope="col" className="border-0">
                       Pourpose
                     </th>
-                    <th scope="col" className="border-0">
-                      Phone
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>1</td>
-                    <td>Ali</td>
+
                     <td>Kerry</td>
                     <td>Male</td>
                     <td>General</td>
-                    <td>+251-916154635</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>Clark</td>
+
                     <td>Angela</td>
                     <td>Female</td>
                     <td>General</td>
-                    <td>+251 964527532</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>Jerry</td>
+
                     <td>Nathan</td>
                     <td>Male</td>
                     <td>General</td>
-                    <td>+251 964527532</td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>Colt</td>
+
                     <td>Angela</td>
                     <td>Male</td>
                     <td>General</td>
-                    <td>+251 964527532</td>
                   </tr>
                 </tbody>
               </table>
