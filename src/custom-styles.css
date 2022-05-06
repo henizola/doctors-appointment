@@ -1,0 +1,54 @@
+.logo{
+    width:auto;
+    height: 80%;;
+    
+}
+
+.top-nav{
+    width:100vw;
+    height:90px;
+    background-color: #15558D;
+padding: 10px 50px;
+}
+
+.two-by-two{
+    background-color: #fff;
+    width:100vw;
+    height:calc(100vh - 90px);
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   padding:100px;
+   grid-gap: 100px;
+}
+.login-vector{
+    width:100%;
+    margin-top:50%;
+    transform: translateY(-50%);
+}
+.form{
+    height: fit-content;
+    margin-top:50%;
+    transform: translateY(-50%);
+}
+
+.form-card{
+    padding:50px;
+}
+
+.login-button
+{
+    width:300px;
+    background-color: #25E5AB;
+color:#fff;
+border: none;
+padding:12px;
+border-radius: 5px;
+margin-top:20px;
+font-size:22px;
+font-weight: bold;
+}
+
+.height-50{
+    height:50px;
+    font-size:23px!important;;
+}

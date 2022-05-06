@@ -44,7 +44,12 @@ export default class UserActions extends React.Component {
           </DropdownItem>
 
           <DropdownItem divider />
-          <DropdownItem tag={Link} to="/" className="text-danger">
+          <DropdownItem
+            tag={Link}
+            to="/"
+            className="text-danger"
+            onClick={this.props.onLogout}
+          >
             <i className="material-icons text-danger">&#xE879;</i> Logout
           </DropdownItem>
         </Collapse>

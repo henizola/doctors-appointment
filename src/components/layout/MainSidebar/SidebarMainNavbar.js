@@ -13,7 +13,7 @@ class SidebarMainNavbar extends React.Component {
 
   handleToggleSidebar() {
     Dispatcher.dispatch({
-      actionType: Constants.TOGGLE_SIDEBAR
+      actionType: Constants.TOGGLE_SIDEBAR,
     });
   }
 
@@ -30,7 +30,7 @@ class SidebarMainNavbar extends React.Component {
             style={{ backgroundColor: " #15558D" }}
           >
             <div className="d-table m-auto" style={{ color: "#fff" }}>
-              Doctors Dashoard
+              {this.props.role}
             </div>
           </NavbarBrand>
           {/* eslint-disable-next-line */}
@@ -50,11 +50,11 @@ SidebarMainNavbar.propTypes = {
   /**
    * Whether to hide the logo text, or not.
    */
-  hideLogoText: PropTypes.bool
+  hideLogoText: PropTypes.bool,
 };
 
 SidebarMainNavbar.defaultProps = {
-  hideLogoText: false
+  hideLogoText: false,
 };
 
 export default SidebarMainNavbar;

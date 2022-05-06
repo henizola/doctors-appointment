@@ -47,8 +47,11 @@ class MainSidebar extends React.Component {
 
     return (
       <Col tag="aside" className={classes} lg={{ size: 2 }} md={{ size: 3 }}>
-        <SidebarMainNavbar hideLogoText={this.props.hideLogoText} />
-        <SidebarSearch />
+        <SidebarMainNavbar
+          hideLogoText={this.props.hideLogoText}
+          role={`${this.props.user.role}s Dashoard`}
+        />
+        {/* <SidebarSearch /> */}
         <SidebarNavItems />
       </Col>
     );

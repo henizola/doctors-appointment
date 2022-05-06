@@ -1,7 +1,7 @@
 import React from "react";
-import { Navigate } from "react-router-dom";
 // Layout Types
 import { DefaultLayout } from "./layouts";
+import NormalLayout from "./layouts/Normal";
 import ComponentsOverview from "./views/ComponentsOverview";
 import DocAppointments from "./views/DocAppointments";
 // Route Views
@@ -12,13 +12,14 @@ import Tables from "./views/Tables";
 import DocProfile from "./views/DocProfile";
 
 import DoctorAvailablity from "./views/DoctorAvailablity";
+import LogIn from "./views/Login";
 
 const routes = [
   {
     path: "/",
     exact: true,
-    layout: DefaultLayout,
-    component: () => <Navigate replace to="/doc/overview" />,
+    layout: NormalLayout,
+    component: () => <LogIn />,
   },
   {
     path: "/doc/overview",
