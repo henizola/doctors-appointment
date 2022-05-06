@@ -4,7 +4,6 @@ import classNames from "classnames";
 import { Col } from "shards-react";
 
 import SidebarMainNavbar from "./SidebarMainNavbar";
-import SidebarSearch from "./SidebarSearch";
 import SidebarNavItems from "./SidebarNavItems";
 
 import { Store } from "../../../flux";
@@ -15,7 +14,10 @@ class MainSidebar extends React.Component {
 
     this.state = {
       menuVisible: false,
-      sidebarNavItems: Store.getSidebarItems(),
+      sidebarNavItems:
+        this.props.user.role === "Doctor"
+          ? Store.getDoctorNavItems()
+          : Store.getAdminNavItems(),
     };
 
     this.onChange = this.onChange.bind(this);
@@ -33,7 +35,10 @@ class MainSidebar extends React.Component {
     this.setState({
       ...this.state,
       menuVisible: Store.getMenuState(),
-      sidebarNavItems: Store.getSidebarItems(),
+      sidebarNavItems:
+        this.props.user && this.props.user.role === "Doctor"
+          ? Store.getDoctorNavItems()
+          : Store.getAdminNavItems(),
     });
   }
 
@@ -51,8 +56,8 @@ class MainSidebar extends React.Component {
           hideLogoText={this.props.hideLogoText}
           role={`${this.props.user.role}s Dashoard`}
         />
-        {/* <SidebarSearch /> */}
-        <SidebarNavItems />
+
+        <SidebarNavItems user={this.props.user} />
       </Col>
     );
   }

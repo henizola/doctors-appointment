@@ -6,7 +6,7 @@ import { Card, CardBody } from "shards-react";
 
 import Chart from "../../utils/chart";
 
-class SmallStats extends React.Component {
+class AdminStats extends React.Component {
   constructor(props) {
     super(props);
 
@@ -19,28 +19,28 @@ class SmallStats extends React.Component {
         maintainAspectRatio: true,
         responsive: true,
         legend: {
-          display: false
+          display: false,
         },
         tooltips: {
           enabled: false,
-          custom: false
+          custom: false,
         },
         elements: {
           point: {
-            radius: 0
+            radius: 0,
           },
           line: {
-            tension: 0.33
-          }
+            tension: 0.33,
+          },
         },
         scales: {
           xAxes: [
             {
               gridLines: false,
               ticks: {
-                display: false
-              }
-            }
+                display: false,
+              },
+            },
           ],
           yAxes: [
             {
@@ -51,13 +51,13 @@ class SmallStats extends React.Component {
                 isplay: false,
                 // Avoid getting the graph line cut of at the top of the canvas.
                 // Chart.js bug link: https://github.com/chartjs/Chart.js/issues/4790
-                suggestedMax: Math.max(...this.props.chartData[0].data) + 1
-              }
-            }
-          ]
-        }
+                suggestedMax: Math.max(...this.props.chartData[0].data) + 1,
+              },
+            },
+          ],
+        },
       },
-      ...this.props.chartOptions
+      ...this.props.chartOptions,
     };
 
     const chartConfig = {
@@ -65,15 +65,15 @@ class SmallStats extends React.Component {
         type: "line",
         data: {
           ...{
-            labels: this.props.chartLabels
+            labels: this.props.chartLabels,
           },
           ...{
-            datasets: this.props.chartData
-          }
+            datasets: this.props.chartData,
+          },
         },
-        options: chartOptions
+        options: chartOptions,
       },
-      ...this.props.chartConfig
+      ...this.props.chartConfig,
     };
 
     new Chart(this.canvasRef.current, chartConfig);
@@ -148,7 +148,7 @@ class SmallStats extends React.Component {
   }
 }
 
-SmallStats.propTypes = {
+AdminStats.propTypes = {
   /**
    * The Small Stats variation.
    */
@@ -184,10 +184,10 @@ SmallStats.propTypes = {
   /**
    * The chart labels.
    */
-  chartLabels: PropTypes.array
+  chartLabels: PropTypes.array,
 };
 
-SmallStats.defaultProps = {
+AdminStats.defaultProps = {
   increase: true,
   percentage: 0,
   value: 0,
@@ -195,7 +195,7 @@ SmallStats.defaultProps = {
   chartOptions: Object.create(null),
   chartConfig: Object.create(null),
   chartData: [],
-  chartLabels: []
+  chartLabels: [],
 };
 
-export default SmallStats;
+export default AdminStats;

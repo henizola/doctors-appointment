@@ -1,8 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
-import { useSelector } from "react-redux";
 import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 import routes from "./routes";
+import { useSelector } from "react-redux";
+
 import "./shards-dashboard/styles/shards-dashboards.1.1.0.min.css";
 
 const App = (props) => {
@@ -12,6 +13,7 @@ const App = (props) => {
   if (!user && location.pathname !== "/") {
     return <Navigate to="/" replace />;
   }
+
   return (
     <Routes>
       <Route path="*" element={<Navigate to="/" replace />} />

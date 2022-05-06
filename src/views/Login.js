@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
@@ -11,7 +11,7 @@ import {
 } from "shards-react";
 import login from "../assets/images/login.png";
 import logo from "../assets/images/logo.png";
-import { userSignedIn } from "../store/user-reducer";
+import { userSignedIn, userSignedOut } from "../store/user-reducer";
 
 import { useNavigate } from "react-router-dom";
 
@@ -22,13 +22,46 @@ const LogIn = () => {
 
   const handleLogin = () => {
     if (email === "Doctor") {
-      dispatch(userSignedIn({ role: "Doctor" }));
-      navigate("/doc/appointments");
+      dispatch(
+        userSignedIn({
+          role: "Doctor",
+          name: "Dr. Jone Doe",
+          firstName: "Jone",
+          LastName: "Doe",
+          email: "jone@gmail.com",
+          department: "Cardio",
+
+          avatar: "1.jpg",
+          jobTitle: "Cardiologist",
+          performanceReportTitle: "Workload",
+          performanceReportValue: 74,
+          metaTitle: "Description",
+          metaValue:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+        })
+      );
+      navigate("/doc/overview");
     } else if (email === "Admin") {
-      dispatch(userSignedIn({ role: "Admin" }));
-      navigate("/doc/appointments");
+      dispatch(
+        userSignedIn({
+          role: "Admin",
+          name: "Admin 1",
+          avatar: "2.jpg",
+          jobTitle: "Adminstrator",
+          performanceReportTitle: "Workload",
+          performanceReportValue: 74,
+          metaTitle: "Description",
+          metaValue:
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio eaque, quidem, commodi soluta qui quae minima obcaecati quod dolorum sint alias, possimus illum assumenda eligendi cumque?",
+        })
+      );
+      navigate("/admin/overview");
     }
   };
+
+  useEffect(() => {
+    dispatch(userSignedOut());
+  }, [dispatch]);
 
   return (
     <div>

@@ -5,6 +5,8 @@ const slice = createSlice({
   initialState: [],
   reducers: {
     userSignedIn: (user, action) => {
+      user.pop();
+
       user.push(action.payload);
     },
     userSignedOut: (user, action) => {

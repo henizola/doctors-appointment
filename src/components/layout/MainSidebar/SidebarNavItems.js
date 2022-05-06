@@ -9,7 +9,10 @@ class SidebarNavItems extends React.Component {
     super(props);
 
     this.state = {
-      navItems: Store.getSidebarItems(),
+      navItems:
+        this.props.user.role === "Doctor"
+          ? Store.getDoctorNavItems()
+          : Store.getAdminNavItems(),
     };
 
     this.onChange = this.onChange.bind(this);
@@ -17,6 +20,7 @@ class SidebarNavItems extends React.Component {
 
   componentDidMount() {
     Store.addChangeListener(this.onChange);
+    console.log(this.props.user.role);
   }
 
   componentWillUnmount() {
@@ -26,7 +30,10 @@ class SidebarNavItems extends React.Component {
   onChange() {
     this.setState({
       ...this.state,
-      navItems: Store.getSidebarItems(),
+      navItems:
+        this.props.user.role === "Doctor"
+          ? Store.getDoctorNavItems()
+          : Store.getAdminNavItems(),
     });
   }
 

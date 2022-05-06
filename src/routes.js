@@ -9,10 +9,11 @@ import DocOverview from "./views/DocOverview";
 import DoctorSchedule from "./views/DoctorSchedule";
 import Errors from "./views/Errors";
 import Tables from "./views/Tables";
-import DocProfile from "./views/DocProfile";
+import DocProfile from "./views/Profile";
 
 import DoctorAvailablity from "./views/DoctorAvailablity";
 import LogIn from "./views/Login";
+import AdminOverview from "./views/AdminOverview";
 
 const routes = [
   {
@@ -27,7 +28,17 @@ const routes = [
     component: DocOverview,
   },
   {
+    path: "/admin/overview",
+    layout: DefaultLayout,
+    component: AdminOverview,
+  },
+  {
     path: "/doc/profile",
+    layout: DefaultLayout,
+    component: DocProfile,
+  },
+  {
+    path: "/admin/profile",
     layout: DefaultLayout,
     component: DocProfile,
   },

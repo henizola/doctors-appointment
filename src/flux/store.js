@@ -3,9 +3,12 @@ import docNavItems from "../data/doc-navs";
 import Constants from "./constants";
 import Dispatcher from "./dispatcher";
 
+import adminNavItems from "../data/admin-navs";
+
 let _store = {
   menuVisible: false,
-  navItems: docNavItems()
+  docNavItems: docNavItems(),
+  adminNavItems: adminNavItems(),
 };
 
 class Store extends EventEmitter {
@@ -36,8 +39,11 @@ class Store extends EventEmitter {
     return _store.menuVisible;
   }
 
-  getSidebarItems() {
-    return _store.navItems;
+  getDoctorNavItems() {
+    return _store.docNavItems;
+  }
+  getAdminNavItems() {
+    return _store.adminNavItems;
   }
 
   addChangeListener(callback) {
