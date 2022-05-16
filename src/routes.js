@@ -14,6 +14,9 @@ import DocProfile from "./views/Profile";
 import DoctorAvailablity from "./views/DoctorAvailablity";
 import LogIn from "./views/Login";
 import AdminOverview from "./views/AdminOverview";
+import CreateProfile from "./views/CreateProfile";
+import EditRegularDoctorSchedule from "./views/EditRegularDoctorSchedule";
+import EditPartTimeDoctorSchedule from "./views/EditPartTimeDoctorSchedule";
 
 const routes = [
   {
@@ -46,6 +49,21 @@ const routes = [
     path: "/doc/schedules",
     layout: DefaultLayout,
     component: DoctorSchedule,
+  },
+  {
+    path: "/admin/create-profile",
+    layout: DefaultLayout,
+    component: CreateProfile,
+  },
+  {
+    path: "/admin/edit-regular",
+    layout: DefaultLayout,
+    component: EditRegularDoctorSchedule,
+  },
+  {
+    path: "/admin/edit-part-time",
+    layout: DefaultLayout,
+    component: EditPartTimeDoctorSchedule,
   },
   {
     path: "/errors",

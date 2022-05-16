@@ -15,7 +15,7 @@ class MainSidebar extends React.Component {
     this.state = {
       menuVisible: false,
       sidebarNavItems:
-        this.props.user.role === "Doctor"
+        this.props.user && this.props.user.role === "Doctor"
           ? Store.getDoctorNavItems()
           : Store.getAdminNavItems(),
     };
@@ -54,7 +54,7 @@ class MainSidebar extends React.Component {
       <Col tag="aside" className={classes} lg={{ size: 2 }} md={{ size: 3 }}>
         <SidebarMainNavbar
           hideLogoText={this.props.hideLogoText}
-          role={`${this.props.user.role}s Dashoard`}
+          role={`${this.props.user && this.props.user.role}s Dashoard`}
         />
 
         <SidebarNavItems user={this.props.user} />

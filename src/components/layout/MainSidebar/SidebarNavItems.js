@@ -10,7 +10,7 @@ class SidebarNavItems extends React.Component {
 
     this.state = {
       navItems:
-        this.props.user.role === "Doctor"
+        this.props.user && this.props.user.role === "Doctor"
           ? Store.getDoctorNavItems()
           : Store.getAdminNavItems(),
     };

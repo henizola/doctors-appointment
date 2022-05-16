@@ -9,17 +9,17 @@ const func = () => {
     {
       title: "Register Doctor",
       htmlBefore: '<i class="material-icons">vertical_split</i>',
-      to: "/blog-posts",
+      to: "/admin/create-profile",
     },
     {
       title: "Edit Regular",
       htmlBefore: '<i class="material-icons">note_add</i>',
-      to: "/add-new-post",
+      to: "/admin/edit-regular",
     },
     {
       title: "Edit Part Time",
       htmlBefore: '<i class="material-icons">view_module</i>',
-      to: "/components-overview",
+      to: "/admin/edit-part-time",
     },
     {
       title: "Tables",

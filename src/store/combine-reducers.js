@@ -1,7 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
 import userReducer from "./user-reducer";
+import regularScheduleReducer from "./user-reducer";
 
-const reducer = combineReducers({ user: userReducer });
-
-export default reducer;
+export const entitiesReducer = combineReducers({
+  user: userReducer,
+  regularSchedule: regularScheduleReducer,
+});

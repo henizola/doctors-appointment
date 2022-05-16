@@ -11,7 +11,7 @@ const App = (props) => {
   const location = useLocation();
 
   if (!user && location.pathname !== "/") {
-    return <Navigate to="/" replace />;
+    // return <Navigate to="/" replace />;
   }
 
   return (

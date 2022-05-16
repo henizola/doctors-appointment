@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import reducer from "./combine-reducers";
+import { entitiesReducer } from "./combine-reducers";
 
-const store = () => {
+const reducer = () => {
   return configureStore({
-    reducer: reducer,
+    reducer: entitiesReducer,
   });
 };
 
-export default store;
+export default reducer;

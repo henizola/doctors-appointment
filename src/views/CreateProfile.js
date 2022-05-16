@@ -6,29 +6,31 @@ import UserDetails from "../components/user-profile-lite/UserDetails";
 import UserAccountDetails from "../components/user-profile-lite/UserAccountDetails";
 
 import { useSelector } from "react-redux";
+import UserProfile from "../components/user-profile-lite/UserProfile";
+import UserAccountForm from "../components/user-profile-lite/UserAccountForm";
 
-const DocProfile = () => {
+const CreateProfile = () => {
   const user = useSelector((state) => state.user[0]);
 
   return (
     <Container fluid className="main-content-container px-4">
       <Row noGutters className="page-header py-4">
         <PageTitle
-          title="User Profile"
-          subtitle="Overview"
+          title="Create Profile"
+          subtitle="Admin"
           md="12"
           className="ml-sm-auto mr-sm-auto"
         />
       </Row>
       <Row>
         <Col lg="4">
-          <UserDetails userDetails={user} />
+          <UserProfile userDetails={user} />
         </Col>
         <Col lg="8">
-          <UserAccountDetails />
+          <UserAccountForm />
         </Col>
       </Row>
     </Container>
   );
 };
-export default DocProfile;
+export default CreateProfile;
